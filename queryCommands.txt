@@ -1,0 +1,105 @@
+---------------
+all users
+---------------
+
+query getUser{
+	users{
+	  _id
+	  firstName
+	  lastName
+	  quotes{
+	    by
+	    quote
+	  }
+	}
+}
+_________________________________________
+---------------
+single User
+---------------
+
+query getUser{
+   user(_id:"1"){
+	   _id
+    firstName
+   }
+}
+__________________________________________
+---------------
+Quotes by user
+---------------
+
+query getQuote{
+  s_quote(by:"1"){
+    by
+    quote
+  }
+}
+___________________________________________
+
+--------------
+Variable
+--------------
+
+query getUser($userId:ID!){
+   s_quote(by:$userId){
+    quote
+  }
+}
+
+//variable
+
+{
+  "userId":"2"
+}
+
+--------------
+sign up
+--------------
+mutation signUp($usernew : userInputs!){
+  user:signUpUser(userNew:$usernew){
+    _id
+    firstName
+    lastName
+    password
+  }
+}
+
+query variable
+{
+	$usernew:{
+	    "firstName":"bapun",
+	    "lastName":"hansdah",
+	    "email":"barunhansdah4@gmail.com",
+	    "password":"barun123"
+	}
+}
+
+----------------
+sign in
+----------------
+mutation signIn($usersign:signInInputs!){
+	user:(userSign:$usersign){
+      token
+	}
+}
+
+query variable
+{
+	$usersign:{
+	   "email":"barunhansdah4@gmail.com",
+	   "password":"barun123"
+	}
+}
+
+---------------
+create Quote
+---------------
+mutation createQuotes{
+	quote:createQuote(quote:"i l s")
+}
+
+header variable 
+{
+	"authorization":"token"
+}
