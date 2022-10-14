@@ -13,6 +13,9 @@ export default function CreateQuote(){
     	refetchQueries:[
     	   {
     	   	query:GET_ALL_QUOTES
+    	   },
+    	   {
+    	   	query:GET_USER_DATA
     	   }
     	]
     })
