@@ -1,4 +1,8 @@
+
+
 export default function Feed() {
+
+	console.log("feed Component")
 	return (
 		  <>
 		       <div className="mt-5 relative max-w-xl mx-auto border shadow">

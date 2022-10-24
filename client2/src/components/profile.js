@@ -1,7 +1,8 @@
 import react from 'react'
 import {FiDelete} from 'react-icons/fi'
 import {AiOutlineEdit} from 'react-icons/ai'
-function Main(){
+function Profile(){
+	console.log("profile Component")
 	return(	
 		<>
            <div className="mx-auto p-2">
@@ -12,7 +13,7 @@ function Main(){
            	    <div><button className="p-1 border-2 border-white mt-2 text-xs rounded" >5 Quotes</button></div>
            	  </div>
            	  <div className="max-w-xl mx-auto mt-5 border-b border-black pb-4">
-           	    <div className="flex gap-2"><input className="p-2 w-8/12  border-2 rounded" placeholder="create your quote"/><button className="rounded w-4/12 bg-black text-white hover:opacity-80">Create Quote</button></div>
+           	    <div className="flex gap-2"><input className="p-2 w-8/12  border-2 rounded" placeholder="write your quote"/><button className="rounded w-4/12 bg-black text-white hover:opacity-80">Create Quote</button></div>
            	  </div>
            	  <div className="mt-5 relative max-w-xl mx-auto border shadow">
            	     <div className="bg-black text-white p-2 round flex gap-4">
@@ -28,4 +29,4 @@ function Main(){
 	)
 }
 
-export default Main;
+export default Profile;
