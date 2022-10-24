@@ -6,6 +6,7 @@ import Profile from './components/profile'
 import CreateQuote from './components/createquote'
 import Otheruser from './components/otheruser'
 import Header from './components/header'
+import Design from './components/design'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import './index.css'
 
@@ -16,7 +17,7 @@ function App() {
 
     <>
       <BrowserRouter>
-         <Header/>
+        
           <Routes>
             <Route path='/' element={<Main />} />
             <Route path='/login' element={<Login />} />
@@ -24,6 +25,7 @@ function App() {
             <Route path='/profile' element={<Profile />} />
             <Route path='/createquote' element={<CreateQuote />} />
             <Route path='/otheruser/:id' element={<Otheruser/>} />
+            <Route path='/design' element={<Design />}/>
           </Routes>
       </BrowserRouter>
     </>

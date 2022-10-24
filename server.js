@@ -4,10 +4,8 @@ import {
     ApolloServerPluginDrainHttpServer,
     ApolloServerPluginLandingPageDisabled
 } from 'apollo-server-core'
-
 import {typeDefs} from './Typedefs/typeDefs.js'
 import {resolvers} from './Resolver/resolver.js'
-
 import {randomBytes} from 'crypto'
 import dotenv from 'dotenv'
 import jwt from 'jsonwebtoken'
@@ -18,8 +16,11 @@ import {connectDB} from './config/db.js'
 import cors from 'cors'
 
 const __dirname = path.resolve();
+
 const app = express();
+
 app.use(cors())
+
 const httpServer = http.createServer(app);
 
 if(process.env.NODE_ENV !== "production"){
