@@ -12,6 +12,7 @@ export const typeDefs = gql`
       }
 
       type QuoteWithName{
+            _id:ID!
             by:IdName
             quote:String
       }
@@ -19,6 +20,7 @@ export const typeDefs = gql`
        type IdName{
             _id:String
             firstName:String
+            lastName:String
       }
 
       type User{
@@ -32,6 +34,7 @@ export const typeDefs = gql`
       }
 
       type Quotes{
+            _id:ID!
       	by:ID!
       	quote:String
       }
@@ -49,6 +52,9 @@ export const typeDefs = gql`
             signInUser(userSign:userSignInputs):Token
             createQuote(quote:String):String
             createLink(link:String):String
+            editQuote(_id:ID!,quote:String):String
+            deleteQuote(_id:ID!):String
+            deleteAllQuote:String
       }
       input userInputs{
       	firstName:String!

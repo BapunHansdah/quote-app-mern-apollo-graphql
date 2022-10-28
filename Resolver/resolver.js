@@ -74,6 +74,7 @@ async function signIn(_,{userSign}){
 }
 
 async function createQuotes(_,{quote},{userId}){
+	console.log(userId)
 	if(!userId){
 	   throw new Error("You must be login in")
 	}
@@ -104,6 +105,35 @@ async function getProfile(_,arg,{userId}){
    return await User.findOne({_id:userId})
 }
 
+async function deleteOneQuote(_,{_id},{userId}){
+
+	console.log(_id)
+
+   if(!userId){
+   	throw new Error("user must be login !")
+   }
+   await await Quote.deleteOne({_id})
+   return "deleted"
+}
+
+async function deleteAllQuotes(_,arg,{userId}){
+	console.log(userId)
+   if(!userId){
+   	throw new Error("user must be login !")
+   }
+
+   await Quote.deleteMany({by:userId})
+   return "All Quotes Deleted"
+}
+
+async function editQuotes(_,{_id,quote},{userId}){
+	if(!userId){
+		throw new Error("user must be login !")
+	}
+
+	await Quote.findByIdAndUpdate(_id,{quote},{new:true})
+	return "edited"
+}
 
 export const resolvers = {
 	Query:{
@@ -125,6 +155,9 @@ export const resolvers = {
 		signUpUser:signUp,
 		signInUser:signIn,
 		createQuote:createQuotes,
-		createLink:createLinks
+		createLink:createLinks,
+		editQuote:editQuotes,
+		deleteQuote:deleteOneQuote,
+		deleteAllQuote:deleteAllQuotes,
 	}
 }

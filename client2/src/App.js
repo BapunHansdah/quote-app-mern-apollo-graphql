@@ -4,6 +4,7 @@ import Login from './components/login'
 import Register from './components/register'
 import Header from './components/header'
 import Feed from './components/feed'
+import User from './components/user'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './index.css'
 
@@ -18,6 +19,7 @@ function App() {
             <Route path='/' element={<Feed/>}/>
             <Route path='/login' element={<Login/>}/>
             <Route path='/register' element={<Register/>}/>
+            <Route path='/user/:userID' element={<User/>}/>
           </Routes>
       </BrowserRouter> 
       </>
