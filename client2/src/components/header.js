@@ -55,7 +55,7 @@ export default function Header(){
                    <GiHamburgerMenu size={20}/>
                  </div>
 		     </div>
-		     <div className={`w-10/12 bg-black text-white h-full z-10 absolute ${menu ? "-left-full" : "left-0"} sm:hidden p-5 shadow top-0 transition-all`}>
+		     <div className={`w-10/12 bg-black text-white h-full z-10 absolute ${menu ? "left-0" : "-left-full"} sm:hidden p-5 shadow top-0 transition-all`}>
                   <div className="flex justify-end" onClick={sideMenu}><TfiClose size={20}/></div>
                   <div className="mt-5">
 		           <ul className="flex flex-col gap-4 text-2xl">
